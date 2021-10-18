@@ -171,6 +171,8 @@ void FloydWarshall::displayDistances() {
         }
         std::cout << "\n";
     }
+    std::cout << "\n";
+
 }
 
 void FloydWarshall::displayPaths() {
@@ -190,6 +192,8 @@ void FloydWarshall::displayPaths() {
         }
         std::cout << "\n";
     }
+    std::cout << "\n";
+
 }
 
 void FloydWarshall::showPath(const std::string& a, std::string b) {
