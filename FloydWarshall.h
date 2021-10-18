@@ -27,6 +27,10 @@ public:
 };
 
 FloydWarshall::FloydWarshall(const UnDirectedGraph &graph) {
+    std::cout << "=========================" << std::endl;
+    std::cout << "ALGORITMO FLOYD WARSHALL" << std::endl;
+    std::cout << "=========================" << std::endl;
+
     distance.resize(graph.vertexes.size());
     nodes.resize(graph.vertexes.size());
     int i = 0;
@@ -71,7 +75,7 @@ FloydWarshall::FloydWarshall(const UnDirectedGraph &graph) {
         displayPaths();
 
     }
-
+    std::cout << "\n";
     for (i = 0; i < distance.size(); i++) {
         for (int j = 0; j < distance.size(); j++) {
             showPath(pos_idt[i], pos_idt[j]);
@@ -82,14 +86,18 @@ FloydWarshall::FloydWarshall(const UnDirectedGraph &graph) {
 
 
 FloydWarshall::FloydWarshall(const DirectedGraph &graph) {
+    std::cout << "=========================" << std::endl;
+    std::cout << "ALGORITMO FLOYD WARSHALL" << std::endl;
+    std::cout << "=========================" << std::endl;
+
     distance.resize(graph.vertexes.size());
     nodes.resize(graph.vertexes.size());
     int i = 0;
     for (const auto &it : graph.vertexes) {
         idt_pos.insert(std::make_pair(it.first, i));
         pos_idt.insert(std::make_pair(i, it.first));
-        distance[i] = std::vector<weight_t>(graph.vertexes.size());
-        nodes[i] = std::vector<id_t>(graph.vertexes.size());
+        distance[i] = std::vector<weight_t>(graph.vertexes.size(), inf);
+        nodes[i] = std::vector<id_t>(graph.vertexes.size(), "-");
         i++;
     }
     for (const auto &it: graph.vertexes) {
@@ -101,6 +109,8 @@ FloydWarshall::FloydWarshall(const DirectedGraph &graph) {
         distance[idt_pos[it.first]][idt_pos[it.first]] = 0;
 
     }
+    std::cout << "\n";
+
     for (i = 0; i < distance.size(); i++) {
         for (int j = 0; j < distance.size(); j++) {
             nodes[j][i] = pos_idt[i];
