@@ -1,5 +1,6 @@
 #include "Tester.h"
-//Implementación basada en el Proyecto de Grafos 2020
+//Trabajo hecho por Joaquín Ramírez Gutiérrez (@lordjuacs)
+// Basado en el Proyecto de Grafos 2020
 // https://github.com/lordjuacs/graph-implementation
 
 int main() {
