@@ -1,7 +1,7 @@
 # Algoritmo Floyd Warshall
 Implementación del algoritmo de enrutamiento Floyd-Warshall para el curso de Redes y Comunicaciones (2021-2) en UTEC.
 
-Se evidencia la matriz de distancias y de recorrido para cada iteración, al igual que el camino de enrutamiento desde cada nodo hacia todos los demás, mostrando el costo toal del camino.
+Se evidencia la matriz de distancias y de recorrido para cada iteración, al igual que el camino de enrutamiento desde cada nodo hacia todos los demás, mostrando el costo total del camino.
 
 Basada en el Proyecto de Grafos realizado en 2020: https://github.com/lordjuacs/graph-implementation
 
