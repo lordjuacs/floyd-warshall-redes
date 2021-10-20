@@ -20,6 +20,10 @@ private:
 public:
     Tester() = default;
 
+    static void runExampleDirected();
+
+    static void runExampleUnDirected();
+
     static void executeExamples();
 
 };
@@ -271,6 +275,38 @@ void Tester::directedSwitch(DirectedGraph &graph, int input) {
             break;
     }
 
+}
+
+void Tester::runExampleUnDirected() {
+    UnDirectedGraph noDirigido;
+    noDirigido.insertVertex("A");
+    noDirigido.insertVertex("B");
+    noDirigido.insertVertex("C");
+    noDirigido.insertVertex("D");
+    noDirigido.insertVertex("E");
+    noDirigido.createEdge("A", "B", 2);
+    noDirigido.createEdge("A", "C", 1);
+    noDirigido.createEdge("A", "D", 4);
+    noDirigido.createEdge("C", "D", 2);
+    noDirigido.createEdge("B", "D", 3);
+    noDirigido.createEdge("B", "E", 4);
+    noDirigido.createEdge("D", "E", 2);
+    FloydWarshall floyd(noDirigido);
+}
+
+void Tester::runExampleDirected() {
+    DirectedGraph dirigido;
+    dirigido.insertVertex("1");
+    dirigido.insertVertex("2");
+    dirigido.insertVertex("3");
+    dirigido.insertVertex("4");
+    dirigido.createEdge("1", "2", 8);
+    dirigido.createEdge("2", "3", 1);
+    dirigido.createEdge("3", "1", 4);
+    dirigido.createEdge("4", "3", 9);
+    dirigido.createEdge("4", "2", 2);
+    dirigido.createEdge("1", "4", 1);
+    FloydWarshall floyd(dirigido);
 }
 
 
